@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="uk=UA">
+
+<head>
+    <title>Калькулятор</title>
+    <link rel="icon" href="kidney.ico" type="image/x-icon">
+    <link
+        href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="super_awesome.css">
+
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- ******Header****** -->
+        <header class="header text-center">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                        <span class="text-highlight">KID</span><span class="text-bold">NEY</span>
+                    </h1>
+                </div>
+                <!--//branding-->
+                <div class="tagline">
+                    <h4>Спосіб визначення показань до резекції нирки при</h4>
+                    <h4>нирково-клітинному раку на основі нефрометрії</h4>
+        </header>
+        <!--//header-->
+
+        <section class="cards-section text-center">
+            <div class="container">
+                <h2 class="title">Оберіть розміщення пухлини та задайте параметри</h2>
+                <!--<div class="intro">
+                    <p>Шось...</p>
+                </div>-->
+                <!--//intro-->
+                
+
+            </div>
+            <!--//container-->
+            
+            
+        </section>
+        <section class="container text-center">
+            <div class="cc-selector-2">
+              <input id="place1" type="radio" name="place" value="N"  />
+              <label class="drinkcard-cc N" for="place1"></label>
+              <input id="place2" type="radio" name="place" value="C"/>
+              <label class="drinkcard-cc C" for="place2"></label>
+              <input id="place3" type="radio" name="place" value="I"  />
+              <label class="drinkcard-cc I" for="place3"></label>
+              <input id="place4" type="radio" name="place" value="U"  />
+              <label class="drinkcard-cc U" for="place4"></label>
+              <input id="place5" type="radio" name="place" value="NI"  />
+              <label class="drinkcard-cc NI" for="place5"></label>
+              <input id="place6" type="radio" name="place" value="NC"  />
+              <label class="drinkcard-cc NC" for="place6"></label>
+              <p></p>
+              <input id="place7" type="radio" name="place" value="NC2"  />
+              <label class="drinkcard-cc NC2" for="place7"></label>
+              <input id="place8" type="radio" name="place" value="CU"  />
+              <label class="drinkcard-cc CU" for="place8"></label>
+              <input id="place9" type="radio" name="place" value="In"  />
+              <label class="drinkcard-cc In" for="place9"></label>
+              <input id="place10" type="radio" name="place" value="Cn"  />
+              <label class="drinkcard-cc Cn" for="place10"></label>
+              <input id="place11" type="radio" name="place" value="Un"  />
+              <label class="drinkcard-cc Un" for="place11"></label>
+              <input id="place12" type="radio" name="place" value="Un2"  />
+              <label class="drinkcard-cc Un2" for="place12"></label>
+
+            
+                
+            </div>
+            <div>
+                <p>Уведіть параметри нирки</p>
+                <input type="number" id="d" name="d" value="d" size ="10">
+                <input type="number" id="e" name="e" value="e" size="10">
+                
+                 <input type="number" id="f" name="f" value="f" size="10">
+                <p>Уведіть парамтери пухлини</p>
+                <input type="number" id="g" name="g" value="g" size="10">
+                
+                <input type="number" id="h" name="h" value="h" size="10">
+                
+                <input type="number" id="i" name="i" value="i" size="10">
+                <p></p>
+                <button onclick="Calc()">Calculate</button>
+                <p>Результат:</p>
+                <span id="result" style ="font-size: xx-large; color: brown;" ></span>
+                
+            </div>
+            <script>
+                function Calc(){
+                    var ele = document.getElementsByName('place');
+                    var place;
+                    for(i = 0; i < ele.length; i++){
+                        if(ele[i].checked)
+                        place = ele[i].value;
+                    }
+                    
+                    var d = document.getElementById("d").value;
+                    var e = document.getElementById("e").value;
+                    var f = document.getElementById("f").value;
+                    var g = document.getElementById("g").value;
+                    var h = document.getElementById("h").value;
+                    var i = document.getElementById("i").value;
+                    
+                    if(d == null || d <= 0 || e == null || e <= 0
+                    || f == null || f <= 0 || g == null || g <= 0
+                    || h == null || h <= 0 || i == null || i <= 0)
+                        {document.getElementById("result").innerText = "Перевірте коректність даних";
+                        return -1;}
+                    
+                    var Ok = 0.96*d*e*f;
+                    var neOk = g*h*i;
+    
+                    if(neOk > Ok)
+                        {document.getElementById("result").innerText = "Об'єм пухлини більший за об'єм нирки";
+                        return -1;}
+    
+                    var val = (1 - neOk/Ok)*100;
+                    document.getElementById("result").innerText =Math.round(val) +"% "+ place;
+                }
+                </script>
+        </section>
+        <!--//cards-section-->
+    </div>
+    <!--//page-wrapper-->
+
+</body>
+
+</html>
