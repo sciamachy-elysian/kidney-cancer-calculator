@@ -1,0 +1,92 @@
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.cc-selector-2 input{
+    position:absolute;
+    z-index:999;
+}
+
+.N{background-image:url(images/N.PNG);}
+.C{background-image:url(images/C.PNG);}
+.U{background-image:url(images/U.PNG);}
+.I{background-image:url(images/I.PNG);}
+.NC{background-image:url(images/NC.PNG);}
+.NI{background-image:url(images/NI.PNG);}
+.NU{background-image:url(images/NU.PNG);}
+.CU{background-image:url(images/CU.PNG);}
+.CI{background-image:url(images/CI.PNG);}
+.Ni{background-image:url(images/Ni.PNG);}
+.Nu{background-image:url(images/Nu.PNG);}
+.Nc{background-image:url(images/Nc.PNG);}
+.Un{background-image:url(images/Un.PNG);}
+.Uc{background-image:url(images/Uc.PNG);}
+.In{background-image:url(images/In.PNG);}
+.Ic{background-image:url(images/Ic.PNG);}
+.Cn{background-image:url(images/Cn.PNG);}
+.Cu{background-image:url(images/Cu.PNG);}
+.Ci{background-image:url(images/Ci.PNG);}
+
+
+.cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:196px;height:200px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:rgb(40, 98, 175)}
+a{color:rgb(29, 90, 146);text-decoration:none;}
+p{margin-bottom:.3em;}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1300px;
+    }
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=number]{
+    width: 110px;
+} 
+.small {
+	font-size: xx-small;
+}
+.larger {
+	font-size: larger;
+}
+.point {
+	font-size: 24pt;
+}
+.percent {
+	font-size: 200%;
+}
