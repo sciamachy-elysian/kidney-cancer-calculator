@@ -1,10 +1,10 @@
+
 .cc-selector input{
     margin:0;padding:0;
     -webkit-appearance:none;
        -moz-appearance:none;
             appearance:none;
 }
-
 .cc-selector-2 input{
     position:absolute;
     z-index:999;
@@ -42,7 +42,7 @@
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
-    width:196px;height:200px;
+    width:200px;height:220px;
     -webkit-transition: all 100ms ease-in;
        -moz-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
@@ -89,4 +89,16 @@ input[type=number]{
 }
 .percent {
 	font-size: 200%;
+}
+.rightimg  {
+    float: right;
+    width: 140px;
+    height: 190px;  
+    margin: 5px 0 7px 7px; 
+}
+img.leftimg {
+    width: 140px;
+    height: 190px;
+    margin: 5px 7px 7px 0px;
+    float: left;
 }
