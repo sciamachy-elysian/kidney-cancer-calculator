@@ -105,6 +105,7 @@ img.leftimg {
 .column {
     float: left;
     width: 33.33%;
+    margin-bottom: 40px;
   }
   
   /* Clear floats after the columns */
