@@ -42,7 +42,7 @@
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
-    widows: 145px;height:205px;
+    width:145px;height:205px;
     -webkit-transition: all 100ms ease-in;
        -moz-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
