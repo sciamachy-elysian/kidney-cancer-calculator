@@ -122,3 +122,21 @@ img.leftimg {
   input[type=number]{
     width: 300px;
 } 
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+    margin-right: 15px;
+}
+[type ="radio"]{
+    visibility:hidden;
+}
+label {
+    cursor: pointer;
+}
+input.lang[type="radio"]:checked + label{
+    background: skyblue;
+}
