@@ -18,7 +18,7 @@
     <link rel="icon" href="assets/images/kidney.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/super-awesome.css">
   </head>
-  <body>
+  <body onload='ChangeLang("ua");'>
     <div id="page-wraper">
       <!-- Sidebar Menu -->
       <div class="responsive-nav">
@@ -172,43 +172,43 @@
           <div class="row">
             <div class="column" id ="kidney-par">
               <div class="col-md-4 mb-3">
-                <span for="kidney-len" id ="kidneylen" ><nobr>Довжина нирки(мм)</nobr></span>
+                <label for="kidney-len" id ="kidneylen" ><!-- <nobr>Довжина нирки(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="kidney-len" placeholder="Довжина(мм)" autocomplete="off">
             </div>
             <div class="col-md-4 mb-3">
-                <label for="kidney-width" id="kidneywidth"><nobr>Ширина нирки(мм)</nobr></label>
+                <label for="kidney-width" id="kidneywidth"><!-- <nobr>Ширина нирки(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="kidney-width" placeholder="Ширина(мм)" autocomplete="off">
             </div>
             <div class="col-md-4 mb-3">
-                <label for="kidney-thick" id="kidneythick"><nobr>Товщина нирки(мм)</nobr></label>
+                <label for="kidney-thick" id="kidneythick"><!-- <nobr>Товщина нирки(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="kidney-thick" placeholder="Товщина(мм)" autocomplete="off">
             </div>
             </div>
             <div class="column">
               <div class="col-md-4  mb-3">
-                <label for="tumor-len" id ="tumorlen" ><nobr>Довжина пухлини(мм)</nobr></label>
+                <label for="tumor-len" id ="tumorlen" ><!-- <nobr>Довжина пухлини(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="tumor-len" placeholder="Довжина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="tumor-width"  id="tumorwidth"><nobr>Ширина пухлини(мм)</nord></label>
+                <label for="tumor-width"  id="tumorwidth"><!-- <nobr>Ширина пухлини(мм)</nord> --></label>
                 <input type="number" class="form-control" id="tumor-width" placeholder="Ширина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="tumor-thick" id="tumorthick" ><nobr>Товщина пухлини(мм)</nobr></label>
-                <input type="number" class="form-control" id="tumor-thick" placeholder="Товщина(мм)"  autocomplete="off" width=100%>
+                <label for="tumor-thick" id="tumorthick"> <!-- <nobr>Товщина пухлини(мм)</nobr>  --></label>
+                <input type="number" class="form-control" id="tumor-thick" placeholder="Товщина(мм)"  autocomplete="off">
               </div>
             </div>
             <div class="column">
               <div class=" col-md-4 mb-3">
-                <label for="kidtum-len" id ="kidtumlen" ><nobr>Довжина пухлинного ураження(мм)</nobr></label>
+                <label for="kidtum-len" id ="kidtumlen" ><!-- <nobr>Довжина пухлинного ураження(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="kidtum-len" placeholder="Довжина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="kidtum-width"  id="kidtumwidth"><nobr>Ширина пухлинного ураження(мм)</nobr></label>
+                <label for="kidtum-width"  id="kidtumwidth"><!-- <nobr>Ширина пухлинного ураження(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="kidtum-width" placeholder="Ширина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="kidtum-thick" id ="kidtumthick"><nobr>Товщина пухлинного ураження(мм)</nobr></label>
+                <label for="kidtum-thick" id ="kidtumthick"><!-- <nobr>Товщина пухлинного ураження(мм)</nobr> --></label>
                 <input type="number" class="form-control" id="kidtum-thick" placeholder="Товщина(мм)" autocomplete="off">
               </div>
             </div>
@@ -305,8 +305,8 @@
       kidneywidth: "<nobr>Kidney width(mm)</nobr>",
       kidneythick: "<nobr>Kidney thickness(mm)</nobr>",
       tumorlen: "<nobr>Tumor length(mm)</nobr>",
-      tumorthick: "<nobr>Tumor width(mm)</nobr>",
-      tumorwidth: "<nobr>Tumor thickness(mm)</nobr>",
+      tumorwidth: "<nobr>Tumor width(mm)</nobr>",
+      tumorthick: "<nobr>Tumor thickness(mm)</nobr>",
       kidtumlen: "<nobr>Length of tumor lesion(mm)</nobr>",
       kidtumwidth: "<nobr>Width of tumor lesion(mm)</nobr>",
       kidtumthick: "<nobr>Thickness of tumor lesion(mm)</nobr>",
@@ -327,8 +327,8 @@
       kidneywidth: "<nobr>Ширина нирки(мм)</nobr>",
       kidneythick: "<nobr>Товщина нирки(мм)</nobr>",
       tumorlen: "<nobr>Довжина пухлини(мм)</nobr>",
-      tumorthick: "<nobr>Ширина пухлини(мм)</nobr>",
-      tumorwidth: "<nobr>Товщина пухлини(мм)</nobr>",
+      tumorthick: "<nobr>Товщина пухлини(мм)</nobr>",
+      tumorwidth: "<nobr>Ширина пухлини(мм)</nobr>",
       kidtumlen: "<nobr>Довжина пухлинного ураження(мм)</nobr>",
       kidtumwidth: "<nobr>Ширина пухлинного ураження(мм)</nobr>",
       kidtumthick: "<nobr>Товщина пухлинного ураження(мм)</nobr>",
@@ -351,7 +351,7 @@
     document.getElementById("chooseloc").innerHTML = link.chooseloc;
     document.getElementById("chooseparms").innerHTML = link.chooseparms;
     document.getElementById("kidneylen").innerHTML = link.kidneylen;
-    document.getElementById("kidneywidth").innerHTML = link.kidneythick;
+    document.getElementById("kidneythick").innerHTML = link.kidneythick;
     document.getElementById("kidneywidth").innerHTML = link.kidneywidth;
     document.getElementById("tumorlen").innerHTML = link.tumorlen;
     document.getElementById("tumorthick").innerHTML = link.tumorthick;
