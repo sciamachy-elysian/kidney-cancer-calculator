@@ -97,12 +97,12 @@
           <div style="text-align: center;" class="container">
             <ul>
               <li>
-                <input type='radio'name='amount' id='change1' onclick="Change()"  class="lang" checked  autocomplete="off"/>
-                <label for='change1' style="color: white; font-size: x-large;">Одна пухлина</label>
+                <input type='radio'name='amount' id='change1' value ="ua" onclick="Change(); Calc();"  class="lang" checked  autocomplete="off"/>
+                <label for='change1' style="color: white; font-size: x-large;" id ="onetumor">Одна пухлина</label>
           </li>
           <li>
-            <input type='radio' name='amount' id='change2'  onclick="Change()" class="lang" autocomplete="off"/>
-            <label for='change2' style="color: white; font-size: x-large;">Дві пухлини</label>
+            <input type='radio' name='amount' id='change2' value = "en" onclick="Change(); Calc();" class="lang" autocomplete="off"/>
+            <label for='change2' style="color: white; font-size: x-large;" id ="secondtumor">Дві пухлини</label>
           </li>
           </ul>
           </div>
@@ -294,7 +294,7 @@
             </div>
           </div> 
 
-          <div id="secondtumor" style="display: none;" class="row">
+          <div id="secondtumorpar" style="display: none;" class="row">
             <div class="column">
               <div class="col-md-4  mb-3 col-centered">
                 <label for="tumor-len" id ="tumorlen2" ><!-- <nobr>Довжина пухлини(мм)</nobr> --></label>
@@ -326,7 +326,7 @@
           </div>
           <div style="text-align: center;">
               <fieldset>
-                <button onclick="Calc()" class="button" style="size: inherit;" id="calc">
+                <button value= "ua" onclick="Calc(value)" class="button" style="size: inherit;" id="calc">
                   Обчислити
                 </button>
               </fieldset>
@@ -409,6 +409,8 @@
       parms: "Kidney and tumor parameters",
       author: "Center of Modern Urology",
       addinfo: "Additional Information",
+      onetumor: "One tumor",
+      secondtumor: "Two tumors",
       header: "According to European recommendations, nephrectomy should be performed <b>for a tumor larger than 4 cm</b> — complete removal of the organ.<br> We designed and use<b> N.C.I.U. nephrometry</b>, which takes into account the localization of the tumor and gives the patient <b>a better chance of organ-saving treatment.</b>",
       chooseloc: "<h4>Choose the location of the tumor</h4>",
       chooseloc1: "<h4>Choose the location of the first tumor</h4>",
@@ -439,6 +441,8 @@
       parms: "Параметри никри та пухлини",
       author: "Центр сучасної урології",
       addinfo: "Додаткова інформація",
+      onetumor: "Одна пухлина",
+      secondtumor: "Дві пухлини",
       header: "За європейськими рекомендаціями, при <b>пухлині більше 4 см</b> має виконуватись нефректомія — повне видалення органу.<br> Ми розробили і використовуємо <b>N.C.I.U. нефрометрію</b>, яка враховує локалізацію пухлини і дає <b>більше шансів пацієнту на органозберігаюче лікування.</b>",
       chooseloc: "<h4>Оберіть розміщення пухлини</h4>",
       chooseloc1: "<h4>Оберіть розміщення першої пухлини</h4>",
@@ -472,6 +476,8 @@
     document.getElementById("def").innerHTML = link.def;
     document.getElementById("loc").innerHTML = link.loc;
     document.getElementById("parms").innerHTML = link.parms;
+    document.getElementById("onetumor").innerHTML = link.onetumor;
+    document.getElementById("secondtumor").innerHTML = link.secondtumor;
     document.getElementById("author").innerHTML = link.author;
     document.getElementById("addinfo").innerHTML = link.addinfo;
     document.getElementById("header").innerHTML = link.header;
@@ -561,13 +567,14 @@
               return -1;}
           var val = (1 - neOk/Ok)*100;
           document.getElementById("result").innerText =place1 +"   "+ Math.round(val) +"%  ";
-     
+                      
           if(place1 != "N" && place1!="Nc" && place1!="Nu" && place1!="Ni"
           && place1 != "NC" && place1!="NU" && place1 !="NI" && val>= 58)
           {
-            if(lang = "ua")
+            if(lang == "ua")
             {document.getElementById("diagno").innerText = "резекція";}
-            else {document.getElementById("diagno").innerText = "resection";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "resection";}
           }
           else if((place1 == "N" || place1=="Nc" || place1=="Nu" || place1=="Ni"
           || place1 == "NC" || place1=="NU" || place1 =="NI") && val>= 55 && max<=38)
@@ -658,7 +665,7 @@
           place2 != "N" && place2!="Nc" && place2!="Nu" && place2!="Ni"
           && place2 != "NC" && place2!="NU" && place2 !="NI" && val>= 58)
           {
-            if(lang = "ua")
+            if(lang == "ua")
             {document.getElementById("diagno").innerText = "резекція";}
             else {document.getElementById("diagno").innerText = "resection";}
           }
@@ -687,7 +694,7 @@
           document.getElementById('chooseloc1').style.display = 'block';
           document.getElementById('chooseloc2').style.display = 'block';
           document.getElementById('chooseradio2').style.display = 'block';
-          document.getElementById('secondtumor').style.display = 'block';
+          document.getElementById('secondtumorpar').style.display = 'block';
 
         }
         else{
@@ -695,7 +702,7 @@
           document.getElementById('chooseloc1').style.display = 'none';
           document.getElementById('chooseloc2').style.display = 'none';
           document.getElementById('chooseradio2').style.display = 'none';
-          document.getElementById('secondtumor').style.display = 'none';
+          document.getElementById('secondtumorpar').style.display = 'none';
         
         }
       }
