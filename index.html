@@ -7,7 +7,7 @@
     <title>N.C.I.U. nephrometry system</title>
     <meta name="description" content="" />
     <meta name="author" content="Tooplate" />
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Additional CSS Files -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
@@ -94,63 +94,143 @@
             <div class="line-dec"></div>
             
           </div>
-          <div class="left-text">
+          <div style="text-align: center;" class="container">
+            <ul>
+              <li>
+                <input type='radio'name='amount' id='change1' onclick="Change()"  class="lang" checked  autocomplete="off"/>
+                <label for='change1' style="color: white; font-size: x-large;">Одна пухлина</label>
+          </li>
+          <li>
+            <input type='radio' name='amount' id='change2'  onclick="Change()" class="lang" autocomplete="off"/>
+            <label for='change2' style="color: white; font-size: x-large;">Дві пухлини</label>
+          </li>
+          </ul>
+          </div>
+          <div class="left-text" id ="chooseloc" style="display: block;">
             <div class="row">
               <div class="col-md-12">
                 <div class="center-text">
-                  <h4 id ="chooseloc">Оберіть розміщення пухлини</h3>
+                  <h4 >Оберіть розміщення пухлини</h4>
                   <div class="line-dec"></div><br><br>
                 </div>
               </div>
             </div>
             <div class="line-dec"></div>
           </div>
-          <div class="cc-selector"> 
-            <input id="place1" type="radio" name="place" value="N"  autocomplete="off" />
-            <label class="drinkcard-cc N" for="place1"></label>
-            <input id="place2" type="radio" name="place" value="C" autocomplete="off"/>
-            <label class="drinkcard-cc C" for="place2"></label>
-            <input id="place3" type="radio" name="place" value="I"  autocomplete="off" />
-            <label class="drinkcard-cc I" for="place3"></label>
-            <input id="place4" type="radio" name="place" value="U"  autocomplete="off" />              
-            <label class="drinkcard-cc U" for="place4"></label>
+          <div class="left-text" id ="chooseloc1" style="display:none">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="center-text">
+                  <h4 >Оберіть розміщення першої пухлини</h4>
+                  <div class="line-dec"></div><br><br>
+                </div>
+              </div>
+            </div>
+            <div class="line-dec"></div>
+          </div>
+          <div class="cc-selector" > 
+            <input id="place11" type="radio" name="place1" value="N"  autocomplete="off" />
+            <label class="drinkcard-cc N" for="place11"></label>
+            <input id="place12" type="radio" name="place1" value="C" autocomplete="off"/>
+            <label class="drinkcard-cc C" for="place12"></label>
+            <input id="place13" type="radio" name="place1" value="I"  autocomplete="off" />
+            <label class="drinkcard-cc I" for="place13"></label>
+            <input id="place14" type="radio" name="place1" value="U"  autocomplete="off" />              
+            <label class="drinkcard-cc U" for="place14"></label>
             
-            <input id="place5" type="radio" name="place" value="NC"  autocomplete="off" />
-            <label class="drinkcard-cc NC" for="place5"></label>
-            <input id="place6" type="radio" name="place" value="NI"  autocomplete="off" />
-            <label class="drinkcard-cc NI" for="place6"></label>
-            <input id="place7" type="radio" name="place" value="NU"  autocomplete="off" />
-            <label class="drinkcard-cc NU" for="place7"></label>
-            <input id="place8" type="radio" name="place" value="CU"  autocomplete="off" />
-            <label class="drinkcard-cc CU" for="place8"></label>
+            <input id="place15" type="radio" name="place1" value="NC"  autocomplete="off" />
+            <label class="drinkcard-cc NC" for="place15"></label>
+            <input id="place16" type="radio" name="place1" value="NI"  autocomplete="off" />
+            <label class="drinkcard-cc NI" for="place16"></label>
+            <input id="place17" type="radio" name="place1" value="NU"  autocomplete="off" />
+            <label class="drinkcard-cc NU" for="place17"></label>
+            <input id="place18" type="radio" name="place1" value="CU"  autocomplete="off" />
+            <label class="drinkcard-cc CU" for="place18"></label>
             
-            <input id="place9" type="radio" name="place" value="CI"  autocomplete="off" />
-            <label class="drinkcard-cc CI" for="place9"></label>
-            <input id="place10" type="radio" name="place" value="Ni"  autocomplete="off" />
-            <label class="drinkcard-cc Ni" for="place10"></label>
-            <input id="place11" type="radio" name="place" value="Nu"  autocomplete="off" />
-            <label class="drinkcard-cc Nu" for="place11"></label>
-            <input id="place12" type="radio" name="place" value="Nc"  autocomplete="off" />
-            <label class="drinkcard-cc Nc" for="place12"></label>
+            <input id="place19" type="radio" name="place1" value="CI"  autocomplete="off" />
+            <label class="drinkcard-cc CI" for="place19"></label>
+            <input id="place110" type="radio" name="place1" value="Ni"  autocomplete="off" />
+            <label class="drinkcard-cc Ni" for="place110"></label>
+            <input id="place111" type="radio" name="place1" value="Nu"  autocomplete="off" />
+            <label class="drinkcard-cc Nu" for="place111"></label>
+            <input id="place112" type="radio" name="place1" value="Nc"  autocomplete="off" />
+            <label class="drinkcard-cc Nc" for="place112"></label>
             
-            <input id="place13" type="radio" name="place" value="In"  autocomplete="off" />
-            <label class="drinkcard-cc In" for="place13"></label>
-            <input id="place14" type="radio" name="place" value="Ic" autocomplete="off"  />
-            <label class="drinkcard-cc Ic" for="place14"></label>
-            <input id="place15" type="radio" name="place" value="Un"  autocomplete="off" />
-            <label class="drinkcard-cc Un" for="place15"></label>
-            <input id="place16" type="radio" name="place" value="Uc" autocomplete="off"  />
-            <label class="drinkcard-cc Uc" for="place16"></label>
+            <input id="place113" type="radio" name="place1" value="In"  autocomplete="off" />
+            <label class="drinkcard-cc In" for="place113"></label>
+            <input id="place114" type="radio" name="place1" value="Ic" autocomplete="off"  />
+            <label class="drinkcard-cc Ic" for="place114"></label>
+            <input id="place115" type="radio" name="place1" value="Un"  autocomplete="off" />
+            <label class="drinkcard-cc Un" for="place115"></label>
+            <input id="place116" type="radio" name="place1" value="Uc" autocomplete="off"  />
+            <label class="drinkcard-cc Uc" for="place116"></label>
             
-            <input id="place17" type="radio" name="place" value="Cn"  autocomplete="off" />
-            <label class="drinkcard-cc Cn" for="place17"></label>
-            <input id="place18" type="radio" name="place" value="Cu"  autocomplete="off" />
-            <label class="drinkcard-cc Cu" for="place18"></label>
-            <input id="place19" type="radio" name="place" value="Ci"  autocomplete="off" />
-            <label class="drinkcard-cc Ci" for="place19"></label>
+            <input id="place117" type="radio" name="place1" value="Cn"  autocomplete="off" />
+            <label class="drinkcard-cc Cn" for="place117"></label>
+            <input id="place118" type="radio" name="place1" value="Cu"  autocomplete="off" />
+            <label class="drinkcard-cc Cu" for="place118"></label>
+            <input id="place119" type="radio" name="place1" value="Ci"  autocomplete="off" />
+            <label class="drinkcard-cc Ci" for="place119"></label>
 
           </div>
-          
+          <div class="left-text" id ="chooseloc2" style="display:none">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="center-text">
+                  <h4 id ="chooseloc2">Оберіть розміщення другої пухлини</h3>
+                  <div class="line-dec"></div><br><br>
+                </div>
+              </div>
+            </div>
+            <div class="line-dec"></div>
+          </div>
+
+          <div class="cc-selector" id="chooseradio2" style ="display: none;"> 
+            <input id="place21" type="radio" name="place2" value="N"  autocomplete="off" />
+            <label class="drinkcard-cc N" for="place21"></label>
+            <input id="place22" type="radio" name="place2" value="C" autocomplete="off"/>
+            <label class="drinkcard-cc C" for="place22"></label>
+            <input id="place23" type="radio" name="place2" value="I"  autocomplete="off" />
+            <label class="drinkcard-cc I" for="place23"></label>
+            <input id="place24" type="radio" name="place2" value="U"  autocomplete="off" />              
+            <label class="drinkcard-cc U" for="place24"></label>
+            
+            <input id="place25" type="radio" name="place2" value="NC"  autocomplete="off" />
+            <label class="drinkcard-cc NC" for="place25"></label>
+            <input id="place26" type="radio" name="place2" value="NI"  autocomplete="off" />
+            <label class="drinkcard-cc NI" for="place26"></label>
+            <input id="place27" type="radio" name="place2" value="NU"  autocomplete="off" />
+            <label class="drinkcard-cc NU" for="place27"></label>
+            <input id="place28" type="radio" name="place2" value="CU"  autocomplete="off" />
+            <label class="drinkcard-cc CU" for="place28"></label>
+            
+            <input id="place29" type="radio" name="place2" value="CI"  autocomplete="off" />
+            <label class="drinkcard-cc CI" for="place29"></label>
+            <input id="place210" type="radio" name="place2" value="Ni"  autocomplete="off" />
+            <label class="drinkcard-cc Ni" for="place210"></label>
+            <input id="place211" type="radio" name="place2" value="Nu"  autocomplete="off" />
+            <label class="drinkcard-cc Nu" for="place211"></label>
+            <input id="place212" type="radio" name="place2" value="Nc"  autocomplete="off" />
+            <label class="drinkcard-cc Nc" for="place212"></label>
+            
+            <input id="place213" type="radio" name="place2" value="In"  autocomplete="off" />
+            <label class="drinkcard-cc In" for="place213"></label>
+            <input id="place214" type="radio" name="place2" value="Ic" autocomplete="off"  />
+            <label class="drinkcard-cc Ic" for="place214"></label>
+            <input id="place215" type="radio" name="place2" value="Un"  autocomplete="off" />
+            <label class="drinkcard-cc Un" for="place215"></label>
+            <input id="place216" type="radio" name="place2" value="Uc" autocomplete="off"  />
+            <label class="drinkcard-cc Uc" for="place216"></label>
+            
+            <input id="place217" type="radio" name="place2" value="Cn"  autocomplete="off" />
+            <label class="drinkcard-cc Cn" for="place217"></label>
+            <input id="place218" type="radio" name="place2" value="Cu"  autocomplete="off" />
+            <label class="drinkcard-cc Cu" for="place218"></label>
+            <input id="place219" type="radio" name="place2" value="Ci"  autocomplete="off" />
+            <label class="drinkcard-cc Ci" for="place219"></label>
+
+          </div>
+
         </div>
       </section>
 
@@ -186,33 +266,64 @@
             </div>
             <div class="column">
               <div class="col-md-4  mb-3">
-                <label for="tumor-len" id ="tumorlen" ><!-- <nobr>Довжина пухлини(мм)</nobr> --></label>
-                <input type="number" class="form-control" id="tumor-len" placeholder="Довжина(мм)" autocomplete="off">
+                <label for="tumor-len" id ="tumorlen1" ><!-- <nobr>Довжина пухлини(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="tumor-len1" placeholder="Довжина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="tumor-width"  id="tumorwidth"><!-- <nobr>Ширина пухлини(мм)</nord> --></label>
-                <input type="number" class="form-control" id="tumor-width" placeholder="Ширина(мм)" autocomplete="off">
+                <label for="tumor-width"  id="tumorwidth1"><!-- <nobr>Ширина пухлини(мм)</nord> --></label>
+                <input type="number" class="form-control" id="tumor-width1" placeholder="Ширина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="tumor-thick" id="tumorthick"> <!-- <nobr>Товщина пухлини(мм)</nobr>  --></label>
-                <input type="number" class="form-control" id="tumor-thick" placeholder="Товщина(мм)"  autocomplete="off">
+                <label for="tumor-thick" id="tumorthick1"> <!-- <nobr>Товщина пухлини(мм)</nobr>  --></label>
+                <input type="number" class="form-control" id="tumor-thick1" placeholder="Товщина(мм)"  autocomplete="off">
               </div>
             </div>
             <div class="column">
               <div class=" col-md-4 mb-3">
-                <label for="kidtum-len" id ="kidtumlen" ><!-- <nobr>Довжина пухлинного ураження(мм)</nobr> --></label>
-                <input type="number" class="form-control" id="kidtum-len" placeholder="Довжина(мм)" autocomplete="off">
+                <label for="kidtum-len" id ="kidtumlen1" ><!-- <nobr>Довжина пухлинного ураження(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="kidtum-len1" placeholder="Довжина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="kidtum-width"  id="kidtumwidth"><!-- <nobr>Ширина пухлинного ураження(мм)</nobr> --></label>
-                <input type="number" class="form-control" id="kidtum-width" placeholder="Ширина(мм)" autocomplete="off">
+                <label for="kidtum-width"  id="kidtumwidth1"><!-- <nobr>Ширина пухлинного ураження(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="kidtum-width1" placeholder="Ширина(мм)" autocomplete="off">
               </div>
               <div class=" col-md-4 mb-3">
-                <label for="kidtum-thick" id ="kidtumthick"><!-- <nobr>Товщина пухлинного ураження(мм)</nobr> --></label>
-                <input type="number" class="form-control" id="kidtum-thick" placeholder="Товщина(мм)" autocomplete="off">
+                <label for="kidtum-thick1" id ="kidtumthick1"><!-- <nobr>Товщина пухлинного ураження(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="kidtum-thick1" placeholder="Товщина(мм)" autocomplete="off">
               </div>
             </div>
           </div> 
+
+          <div id="secondtumor" style="display: none;" class="row">
+            <div class="column">
+              <div class="col-md-4  mb-3 col-centered">
+                <label for="tumor-len" id ="tumorlen2" ><!-- <nobr>Довжина пухлини(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="tumor-len2" placeholder="Довжина(мм)" autocomplete="off">
+              </div>
+              <div class=" col-md-4 mb-3 col-centered">
+                <label for="tumor-width"  id="tumorwidth2"><!-- <nobr>Ширина пухлини(мм)</nord> --></label>
+                <input type="number" class="form-control" id="tumor-width2" placeholder="Ширина(мм)" autocomplete="off">
+              </div>
+              <div class=" col-md-4 mb-3 col-centered">
+                <label for="tumor-thick" id="tumorthick2"> <!-- <nobr>Товщина пухлини(мм)</nobr>  --></label>
+                <input type="number" class="form-control" id="tumor-thick2" placeholder="Товщина(мм)"  autocomplete="off">
+              </div>
+            </div>
+            <div class="column">
+              <div class=" col-md-4 mb-3 col-centered">
+                <label for="kidtum-len" id ="kidtumlen2" ><!-- <nobr>Довжина пухлинного ураження(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="kidtum-len2" placeholder="Довжина(мм)" autocomplete="off">
+              </div>
+              <div class=" col-md-4 mb-3 col-centered">
+                <label for="kidtum-width"  id="kidtumwidth2"><!-- <nobr>Ширина пухлинного ураження(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="kidtum-width2" placeholder="Ширина(мм)" autocomplete="off">
+              </div>
+              <div class=" col-md-4 mb-3 col-centered">
+                <label for="kidtum-thick" id ="kidtumthick2"><!-- <nobr>Товщина пухлинного ураження(мм)</nobr> --></label>
+                <input type="number" class="form-control" id="kidtum-thick2" placeholder="Товщина(мм)" autocomplete="off">
+              </div>
+            </div>            
+          </div>
           <div style="text-align: center;">
               <fieldset>
                 <button onclick="Calc()" class="button" style="size: inherit;" id="calc">
@@ -299,17 +410,25 @@
       author: "Center of Modern Urology",
       addinfo: "Additional Information",
       header: "According to European recommendations, nephrectomy should be performed <b>for a tumor larger than 4 cm</b> — complete removal of the organ.<br> We designed and use<b> N.C.I.U. nephrometry</b>, which takes into account the localization of the tumor and gives the patient <b>a better chance of organ-saving treatment.</b>",
-      chooseloc: "Choose the location of the tumor",
+      chooseloc: "<h4>Choose the location of the tumor</h4>",
+      chooseloc1: "<h4>Choose the location of the first tumor</h4>",
+      chooseloc2: "<h4>Choose the location of the second tumor</h4>",
       chooseparms: "Enter the parameters to determine the percentage of functioning kidney parenchyma",
       kidneylen: "<nobr>Kidney length(mm)</nobr>",
       kidneywidth: "<nobr>Kidney width(mm)</nobr>",
       kidneythick: "<nobr>Kidney thickness(mm)</nobr>",
-      tumorlen: "<nobr>Tumor length(mm)</nobr>",
-      tumorwidth: "<nobr>Tumor width(mm)</nobr>",
-      tumorthick: "<nobr>Tumor thickness(mm)</nobr>",
-      kidtumlen: "<nobr>Length of tumor lesion(mm)</nobr>",
-      kidtumwidth: "<nobr>Width of tumor lesion(mm)</nobr>",
-      kidtumthick: "<nobr>Thickness of tumor lesion(mm)</nobr>",
+      tumorlen1: "<nobr>Tumor 1 length(mm)</nobr>",
+      tumorwidth1: "<nobr>Tumor 1 width(mm)</nobr>",
+      tumorthick1: "<nobr>Tumor 1 thickness(mm)</nobr>",
+      kidtumlen1: "<nobr>Length 1 of tumor lesion(mm)</nobr>",
+      kidtumwidth1: "<nobr>Width 1 of tumor lesion(mm)</nobr>",
+      kidtumthick1: "<nobr>Thickness 1 of tumor lesion(mm)</nobr>",
+      tumorlen2: "<nobr>Tumor 2 length(mm)</nobr>",
+      tumorwidth2: "<nobr>Tumor 2 width(mm)</nobr>",
+      tumorthick2: "<nobr>Tumor 2 thickness(mm)</nobr>",
+      kidtumlen2: "<nobr>Length 2 of tumor lesion(mm)</nobr>",
+      kidtumwidth2: "<nobr>Width 2 of tumor lesion(mm)</nobr>",
+      kidtumthick2: "<nobr>Thickness 2 of tumor lesion(mm)</nobr>",
       calc: "Сalculate",
       res:"<b>Result: </b>"
     }
@@ -321,17 +440,25 @@
       author: "Центр сучасної урології",
       addinfo: "Додаткова інформація",
       header: "За європейськими рекомендаціями, при <b>пухлині більше 4 см</b> має виконуватись нефректомія — повне видалення органу.<br> Ми розробили і використовуємо <b>N.C.I.U. нефрометрію</b>, яка враховує локалізацію пухлини і дає <b>більше шансів пацієнту на органозберігаюче лікування.</b>",
-      chooseloc: "Оберіть розміщення пухлини",
+      chooseloc: "<h4>Оберіть розміщення пухлини</h4>",
+      chooseloc1: "<h4>Оберіть розміщення першої пухлини</h4>",
+      chooseloc2: "<h4>Оберіть розміщення другої пухлини</h4>",
       chooseparms: "Для визначення відсотку функціонуючої паренхіми нирки уведіть параметри",
       kidneylen: "<nobr>Довжина нирки(мм)</nobr>",
       kidneywidth: "<nobr>Ширина нирки(мм)</nobr>",
       kidneythick: "<nobr>Товщина нирки(мм)</nobr>",
-      tumorlen: "<nobr>Довжина пухлини(мм)</nobr>",
-      tumorthick: "<nobr>Товщина пухлини(мм)</nobr>",
-      tumorwidth: "<nobr>Ширина пухлини(мм)</nobr>",
-      kidtumlen: "<nobr>Довжина пухлинного ураження(мм)</nobr>",
-      kidtumwidth: "<nobr>Ширина пухлинного ураження(мм)</nobr>",
-      kidtumthick: "<nobr>Товщина пухлинного ураження(мм)</nobr>",
+      tumorlen1: "<nobr>Довжина 1 пухлини(мм)</nobr>",
+      tumorthick1: "<nobr>Товщина 1 пухлини(мм)</nobr>",
+      tumorwidth1: "<nobr>Ширина 1 пухлини(мм)</nobr>",
+      kidtumlen1: "<nobr>Довжина 1 пухлинного ураження(мм)</nobr>",
+      kidtumwidth1: "<nobr>Ширина 1 пухлинного ураження(мм)</nobr>",
+      kidtumthick1: "<nobr>Товщина 1 пухлинного ураження(мм)</nobr>",
+      tumorlen2: "<nobr>Довжина 2 пухлини(мм)</nobr>",
+      tumorthick2: "<nobr>Товщина 2 пухлини(мм)</nobr>",
+      tumorwidth2: "<nobr>Ширина 2 пухлини(мм)</nobr>",
+      kidtumlen2: "<nobr>Довжина 2 пухлинного ураження(мм)</nobr>",
+      kidtumwidth2: "<nobr>Ширина 2 пухлинного ураження(мм)</nobr>",
+      kidtumthick2: "<nobr>Товщина 2 пухлинного ураження(мм)</nobr>",
       calc: "Обчислити",
       res:"<b>Результат: </ b>"
     }
@@ -349,16 +476,24 @@
     document.getElementById("addinfo").innerHTML = link.addinfo;
     document.getElementById("header").innerHTML = link.header;
     document.getElementById("chooseloc").innerHTML = link.chooseloc;
+    document.getElementById("chooseloc1").innerHTML = link.chooseloc1;
+    document.getElementById("chooseloc2").innerHTML = link.chooseloc2;
     document.getElementById("chooseparms").innerHTML = link.chooseparms;
     document.getElementById("kidneylen").innerHTML = link.kidneylen;
     document.getElementById("kidneythick").innerHTML = link.kidneythick;
     document.getElementById("kidneywidth").innerHTML = link.kidneywidth;
-    document.getElementById("tumorlen").innerHTML = link.tumorlen;
-    document.getElementById("tumorthick").innerHTML = link.tumorthick;
-    document.getElementById("tumorwidth").innerHTML = link.tumorwidth;
-    document.getElementById("kidtumlen").innerHTML = link.kidtumlen;
-    document.getElementById("kidtumthick").innerHTML = link.kidtumthick;
-    document.getElementById("kidtumwidth").innerHTML = link.kidtumwidth;
+    document.getElementById("tumorlen1").innerHTML = link.tumorlen1;
+    document.getElementById("tumorthick1").innerHTML = link.tumorthick1;
+    document.getElementById("tumorwidth1").innerHTML = link.tumorwidth1;
+    document.getElementById("kidtumlen1").innerHTML = link.kidtumlen1;
+    document.getElementById("kidtumthick1").innerHTML = link.kidtumthick1;
+    document.getElementById("kidtumwidth1").innerHTML = link.kidtumwidth1;
+    document.getElementById("tumorlen2").innerHTML = link.tumorlen2;
+    document.getElementById("tumorthick2").innerHTML = link.tumorthick2;
+    document.getElementById("tumorwidth2").innerHTML = link.tumorwidth2;
+    document.getElementById("kidtumlen2").innerHTML = link.kidtumlen2;
+    document.getElementById("kidtumthick2").innerHTML = link.kidtumthick2;
+    document.getElementById("kidtumwidth2").innerHTML = link.kidtumwidth2;
     document.getElementById("calc").innerHTML = link.calc;
     document.getElementById("res").innerHTML = link.res;
     
@@ -368,11 +503,12 @@
 
     <script>
       function Calc(){
-          var ele = document.getElementsByName('place');
-          var place;
+        if(document.getElementById("change1").checked){
+          var ele = document.getElementsByName('place1');
+          var place1;
           for(i = 0; i < ele.length; i++){
               if(ele[i].checked)
-              place = ele[i].value;
+              place1 = ele[i].value;
           }
           
           var langlist = document.getElementsByName("language");
@@ -386,12 +522,12 @@
           var kl = document.getElementById("kidney-len").value;
           var kt = document.getElementById("kidney-thick").value;
           var kw = document.getElementById("kidney-width").value;
-          var ktl = document.getElementById("kidtum-len").value;
-          var ktt = document.getElementById("kidtum-thick").value;
-          var ktw = document.getElementById("kidtum-width").value;
-          var tl = document.getElementById("tumor-len").value;
-          var tt = document.getElementById("tumor-thick").value;
-          var tw = document.getElementById("tumor-width").value;
+          var ktl = document.getElementById("kidtum-len1").value;
+          var ktt = document.getElementById("kidtum-thick1").value;
+          var ktw = document.getElementById("kidtum-width1").value;
+          var tl = document.getElementById("tumor-len1").value;
+          var tt = document.getElementById("tumor-thick1").value;
+          var tw = document.getElementById("tumor-width1").value;
 
 
           if(kl == null || kl <= 0 || kt == null || kt <= 0
@@ -424,17 +560,17 @@
                 }
               return -1;}
           var val = (1 - neOk/Ok)*100;
-          document.getElementById("result").innerText =place +"   "+ Math.round(val) +"%  ";
+          document.getElementById("result").innerText =place1 +"   "+ Math.round(val) +"%  ";
      
-          if(place != "N" && place!="Nc" && place!="Nu" && place!="Ni"
-          && place != "NC" && place!="NU" && place !="NI" && val>= 58)
+          if(place1 != "N" && place1!="Nc" && place1!="Nu" && place1!="Ni"
+          && place1 != "NC" && place1!="NU" && place1 !="NI" && val>= 58)
           {
             if(lang = "ua")
             {document.getElementById("diagno").innerText = "резекція";}
             else {document.getElementById("diagno").innerText = "resection";}
           }
-          else if((place == "N" || place=="Nc" || place=="Nu" || place=="Ni"
-          || place == "NC" || place=="NU" || place =="NI") && val>= 55 && max<=38)
+          else if((place1 == "N" || place1=="Nc" || place1=="Nu" || place1=="Ni"
+          || place1 == "NC" || place1=="NU" || place1 =="NI") && val>= 55 && max<=38)
             {
               if(lang =="ua"){
               document.getElementById("diagno").innerText = "резекція";}
@@ -445,6 +581,123 @@
             document.getElementById("diagno").innerText = "нефректомія";
             else  document.getElementById("diagno").innerText = "nephrectomy  ";
             }
+        }
+        else if(document.getElementById("change2").checked){
+          var ele1 = document.getElementsByName('place1');
+          var place1;
+          for(i = 0; i < ele1.length; i++){
+              if(ele1[i].checked)
+              place1 = ele1[i].value;
+          }
+          var ele2 = document.getElementsByName('place2');
+          var place2;
+          for(i = 0; i < ele2.length; i++){
+              if(ele2[i].checked)
+              place2 = ele2[i].value;
+          }
+
+          var langlist = document.getElementsByName("language");
+          var lang;
+
+          for(i = 0; i < langlist.length; i++){
+              if(langlist[i].checked)
+              lang = langlist[i].value;
+          }
+          
+          var kl = document.getElementById("kidney-len").value;
+          var kt = document.getElementById("kidney-thick").value;
+          var kw = document.getElementById("kidney-width").value;
+          var ktl1 = document.getElementById("kidtum-len1").value;
+          var ktt1 = document.getElementById("kidtum-thick1").value;
+          var ktw1 = document.getElementById("kidtum-width1").value;
+          var tl1 = document.getElementById("tumor-len1").value;
+          var tt1 = document.getElementById("tumor-thick1").value;
+          var tw1 = document.getElementById("tumor-width1").value;
+          var ktl2 = document.getElementById("kidtum-len2").value;
+          var ktt2 = document.getElementById("kidtum-thick2").value;
+          var ktw2 = document.getElementById("kidtum-width2").value;
+          var tl2 = document.getElementById("tumor-len2").value;
+          var tt2 = document.getElementById("tumor-thick2").value;
+          var tw2 = document.getElementById("tumor-width2").value;
+
+          if(kl == null || kl <= 0 || kt == null || kt <= 0
+          || kw == null || kw <= 0 || ktl1 == null || ktl1 <= 0
+          || ktt1 == null || ktt1 <= 0 || ktw1 == null || ktw1 <= 0
+          || tl1 == null || tl1 <=0 || tt1 == null || tt1 <=0 ||
+             tw1 == null || tw1 <=0 || ktl2 == null || ktl2 <= 0
+          || ktt2 == null || ktt2 <= 0 || ktw2 == null || ktw2 <= 0
+          || tl2 == null || tl2 <=0 || tt2 == null || tt2 <=0 ||
+             tw2 == null || tw2 <=0)
+              {
+                if(lang == "ua")
+                document.getElementById("result").innerText = "Перевірте коректність даних";
+                else {
+                document.getElementById("result").innerText = "Check that the data is correct";
+                }
+              return -1;}
+          var Ok = 0.96*kl*kt*kw;
+          var neOk1 = ktl1*ktt1*ktw1;
+          var neOk2 = ktl2  *ktt2*ktw2;
+          var max = Math.max(ktl, ktt, ktw);
+
+          if((neOk1+neOk2) > Ok)
+              {
+                if(lang =="ua")
+                {
+                document.getElementById("result").innerText = "Об'єм пухлинного ураження більший за об'єм нирки";
+                }
+                else {
+                  document.getElementById("result").innerText = "The volume of tumor lesion is larger than the volume of the kidney";
+                }
+              return -1;}
+          var val = (1 - (neOk1+neOk2)/Ok)*100;
+          document.getElementById("result").innerText =place1 + "  " + place2 +"   "+ Math.round(val) +"%  ";
+
+          if(place1 != "N" && place1!="Nc" && place1!="Nu" && place1!="Ni"
+          && place1 != "NC" && place1!="NU" && place1 !="NI" &&
+          place2 != "N" && place2!="Nc" && place2!="Nu" && place2!="Ni"
+          && place2 != "NC" && place2!="NU" && place2 !="NI" && val>= 58)
+          {
+            if(lang = "ua")
+            {document.getElementById("diagno").innerText = "резекція";}
+            else {document.getElementById("diagno").innerText = "resection";}
+          }
+          else if((place1 == "N" || place1=="Nc" || place1=="Nu" || place1=="Ni"
+          || place1 == "NC" || place1=="NU" || place1 =="NI" ||place2 == "N" || place2=="Nc" || place2=="Nu" || place2=="Ni"
+          || place2 == "NC" || place2=="NU" || place2 =="NI") && val>= 55 && max<=38)
+            {
+              if(lang =="ua"){
+              document.getElementById("diagno").innerText = "резекція";}
+              else {document.getElementById("diagno").innerText = "resection";}
+            }
+          else {
+            if(lang == "ua")
+            document.getElementById("diagno").innerText = "нефректомія";
+            else  document.getElementById("diagno").innerText = "nephrectomy  ";
+            }
+
+        }
+      }
+
+      function Change(){
+        
+        if(document.getElementById("change2").checked)
+        {
+          document.getElementById('chooseloc').style.display = 'none';
+          document.getElementById('chooseloc1').style.display = 'block';
+          document.getElementById('chooseloc2').style.display = 'block';
+          document.getElementById('chooseradio2').style.display = 'block';
+          document.getElementById('secondtumor').style.display = 'block';
+
+        }
+        else{
+          document.getElementById('chooseloc').style.display = 'block';
+          document.getElementById('chooseloc1').style.display = 'none';
+          document.getElementById('chooseloc2').style.display = 'none';
+          document.getElementById('chooseradio2').style.display = 'none';
+          document.getElementById('secondtumor').style.display = 'none';
+        
+        }
       }
       </script>
   </body>
