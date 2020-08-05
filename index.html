@@ -124,7 +124,7 @@
                   <h4 >Оберіть розміщення першої пухлини</h4>
                   <div class="line-dec"></div><br><br>
                 </div>
-              </div>
+              </div>  
             </div>
             <div class="line-dec"></div>
           </div>
@@ -334,6 +334,8 @@
           <div class="clo-md-3" style="text-align: center;">
               <span class="label" style="font-size: x-large;" id = "res"><br><b>Результат: </span><span id="result" style ="font-size: xx-large; color: white; width:1000px;" ></span>
               <span id ="diagno" style="font-size: xx-large; color: white; width: 200px;"></span>
+              <br>
+              <span id="result2" style ="font-size: xx-large; color: white; width:1000px;" ></span><span id ="diagno2" style="font-size: xx-large; color: white; width: 200px;"></span>
             </div>
 
         </div>
@@ -516,7 +518,6 @@
               if(ele[i].checked)
               place1 = ele[i].value;
           }
-          
           var langlist = document.getElementsByName("language");
           var lang;
 
@@ -553,7 +554,6 @@
           var neOk = ktl*ktt*ktw;
           var max = Math.max(ktl, ktt, ktw);
           
-          
 
           if(neOk > Ok)
               {
@@ -567,27 +567,88 @@
               return -1;}
           var val = (1 - neOk/Ok)*100;
           document.getElementById("result").innerText =place1 +"   "+ Math.round(val) +"%  ";
-                      
-          if(place1 != "N" && place1!="Nc" && place1!="Nu" && place1!="Ni"
-          && place1 != "NC" && place1!="NU" && place1 !="NI" && val>= 58)
-          {
+          
+
+          if (place1 == "Nu" || place1 == "Ni" || place1 == "Nc" || place1 == "N" || place1 == "NU" || place1 == "NI" || place1 == "NC"){
+            if((place1 == "Nu" || place1 == "Ni" || place1 == "Nc") && val >=85 && max <= 38){
+            var prob = max * 1.75 + 32.5
             if(lang == "ua")
-            {document.getElementById("diagno").innerText = "резекція";}
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
-              document.getElementById("diagno").innerText = "resection";}
-          }
-          else if((place1 == "N" || place1=="Nc" || place1=="Nu" || place1=="Ni"
-          || place1 == "NC" || place1=="NU" || place1 =="NI") && val>= 55 && max<=38)
-            {
-              if(lang =="ua"){
-              document.getElementById("diagno").innerText = "резекція";}
-              else {document.getElementById("diagno").innerText = "resection";}
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
             }
-          else {
+            else if(place1 == "N" && max <= 38){
+            
+            var prob = max * 1.75 + 32.5
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+            }
+            else if((place1 == "NU" || place1 == "NI" || place1 == "NC") && val >=75 && max <= 38){
+            
+            var prob = max * 1.75 + 32.5
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+            }
+            else{
+            
             if(lang == "ua")
             document.getElementById("diagno").innerText = "нефректомія";
-            else  document.getElementById("diagno").innerText = "nephrectomy  ";
-            }
+            else  document.getElementById("diagno").innerText = "nephrectomy";
+          }
+            
+          }
+          else if((place1 == "I" || place1 == "U") && val>= 58)
+          {
+            var prob = 1.1951 * val -19.317
+            
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if(place1 == "C" && val >= 67){
+            
+            var prob = val* 1.53125 -52.59375
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place1 == "Uc" || place1 == "Ic") && val >= 60){
+            
+            var prob = val *1.256410256 - 25.38461538
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place1 == "Cu" || place1 == "Ci" || place1 == "Cn") && val >=64){
+            
+            var prob = val *1.4 - 39.6
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place1 == "CU" || place1 == "CI" || place1 == "UC"|| place1 == "IC") && val >=62,5){
+            
+            var prob = val *1.34246575 - 33.904109
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
+          }
+          else{
+            
+            if(lang == "ua")
+            document.getElementById("diagno").innerText = "нефректомія";
+            else  document.getElementById("diagno").innerText = "nephrectomy";
+          }
+          
         }
         else if(document.getElementById("change2").checked){
           var ele1 = document.getElementsByName('place1');
@@ -645,8 +706,8 @@
           var Ok = 0.96*kl*kt*kw;
           var neOk1 = ktl1*ktt1*ktw1;
           var neOk2 = ktl2  *ktt2*ktw2;
-          var max = Math.max(ktl, ktt, ktw);
-
+          var max1 = Math.max(ktl1, ktt1, ktw1);
+          var max2 = Math.max(ktl2, ktt2, ktw2);
           if((neOk1+neOk2) > Ok)
               {
                 if(lang =="ua")
@@ -657,31 +718,176 @@
                   document.getElementById("result").innerText = "The volume of tumor lesion is larger than the volume of the kidney";
                 }
               return -1;}
-          var val = (1 - (neOk1+neOk2)/Ok)*100;
-          document.getElementById("result").innerText =place1 + "  " + place2 +"   "+ Math.round(val) +"%  ";
-
-          if(place1 != "N" && place1!="Nc" && place1!="Nu" && place1!="Ni"
-          && place1 != "NC" && place1!="NU" && place1 !="NI" &&
-          place2 != "N" && place2!="Nc" && place2!="Nu" && place2!="Ni"
-          && place2 != "NC" && place2!="NU" && place2 !="NI" && val>= 58)
-          {
+          
+          var val1 = (1 - neOk1/Ok)*100;
+          document.getElementById("result").innerText =place1 +"   "+ Math.round(val1) +"%  ";
+          if (place1 == "Nu" || place1 == "Ni" || place1 == "Nc" || place1 == "N" || place1 == "NU" || place1 == "NI" || place1 == "NC"){
+            if((place1 == "Nu" || place1 == "Ni" || place1 == "Nc") && val1 >=85 && max1 <= 38){
+            var prob = max1 * 1.75 + 32.5
             if(lang == "ua")
-            {document.getElementById("diagno").innerText = "резекція";}
-            else {document.getElementById("diagno").innerText = "resection";}
-          }
-          else if((place1 == "N" || place1=="Nc" || place1=="Nu" || place1=="Ni"
-          || place1 == "NC" || place1=="NU" || place1 =="NI" ||place2 == "N" || place2=="Nc" || place2=="Nu" || place2=="Ni"
-          || place2 == "NC" || place2=="NU" || place2 =="NI") && val>= 55 && max<=38)
-            {
-              if(lang =="ua"){
-              document.getElementById("diagno").innerText = "резекція";}
-              else {document.getElementById("diagno").innerText = "resection";}
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection : "+ Math.round(prob) +"%  ";}
             }
-          else {
+            else if(place1 == "N" && max1 <= 38){
+            
+            var prob = max1 * 1.75 + 32.5
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+            }
+            else if((place1 == "NU" || place1 == "NI" || place1 == "NC") && val1 >=75 && max1 <= 38){
+            
+            var prob = max1 * 1.75 + 32.5
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+            }
+            else{
+            
             if(lang == "ua")
             document.getElementById("diagno").innerText = "нефректомія";
-            else  document.getElementById("diagno").innerText = "nephrectomy  ";
+            else  document.getElementById("diagno").innerText = "nephrectomy";
+          }
+            
+          }
+          else if((place1 == "I" || place1 == "U") && val1>= 58)
+          {
+            var prob = 1.1951 * val1 -19.317
+            
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if(place1 == "C" && val1 >= 67){
+            
+            var prob = val1* 1.53125 -52.59375
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place1 == "Uc" || place1 == "Ic" || place1 == "In" || place1 == "Un") && val1 >= 60){
+            
+            var prob = val1 *1.256410256 - 25.38461538
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place1 == "Cu" || place1 == "Ci" || place1 == "Cn") && val1 >=64){
+            
+            var prob = val1 *1.4 - 39.6
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place1 == "CU" || place1 == "CI" || place1 == "UC"|| place1 == "IC") && val1 >=62,5){
+            
+            var prob = val1 *1.34246575 - 33.904109
+            if(lang == "ua")
+            {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else{
+            
+            if(lang == "ua")
+            document.getElementById("diagno").innerText = "нефректомія";
+            else  document.getElementById("diagno").innerText = "nephrectomy";
+          }
+
+          var val2 = (1 - neOk2/Ok)*100;
+          document.getElementById("result2").innerText =place2 +"   "+ Math.round(val2) +"%  ";
+          if (place2 == "Nu" || place2 == "Ni" || place2 == "Nc" || place2 == "N" || place2 == "NU" || place2 == "NI" || place2 == "NC"){
+            if((place2 == "Nu" || place2 == "Ni" || place2 == "Nc") && val2 >=85 && max2 <= 38){
+            var prob = max2 * 1.75 + 32.5
+            alert(8)
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
             }
+            else if(place2 == "N" && max2 <= 38){
+            alert(7)
+            var prob = max2 * 1.75 + 32.5
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+            }
+            else if((place2 == "NU" || place2 == "NI" || place2 == "NC") && val2 >=75 && max2 <= 38){
+            alert(6)
+            var prob = max2 * 1.75 + 32.5
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+            }
+            else{
+            
+            if(lang == "ua")
+            document.getElementById("diagno2").innerText = "нефректомія";
+            else  document.getElementById("diagno2").innerText = "nephrectomy";
+          }
+            
+          }
+          else if((place2 == "I" || place2 == "U") && val2>= 58)
+          {
+            var prob = 1.1951 * val2 -19.317
+            alert(5)
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if(place2 == "C" && val2 >= 67){
+            alert(4)
+            var prob = val2* 1.53125 -52.59375
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place2 == "Uc" || place2 == "Ic" || place1 == "In" || place1 == "Un") && val2 >= 60){
+            alert(3)
+            var prob = val2 *1.256410256 - 25.38461538
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place2 == "Cu" || place2 == "Ci" || place2 == "Cn") && val2 >=64){
+            alert(2)
+            var prob = val2 *1.4 - 39.6
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+          }
+          else if((place2 == "CU" || place2 == "CI" || place2 == "UC"|| place2 == "IC") && val2 >=62,5){
+            var prob = val2 *1.34246575 - 33.904109
+            if(prob < 50){
+              if(lang == "ua")
+            document.getElementById("diagno2").innerText = "нефректомія";
+            else  document.getElementById("diagno2").innerText = "nephrectomy";
+            }else{
+            if(lang == "ua")
+            {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
+            else if(lang == "en"){
+              document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
+            }
+          }
+          else{
+            if(lang == "ua")
+            document.getElementById("diagno2").innerText = "нефректомія";
+            else  document.getElementById("diagno2").innerText = "nephrectomy";
+          }
+          
 
         }
       }
