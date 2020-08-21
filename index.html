@@ -571,7 +571,7 @@
 
           if (place1 == "Nu" || place1 == "Ni" || place1 == "Nc" || place1 == "N" || place1 == "NU" || place1 == "NI" || place1 == "NC"){
             if((place1 == "Nu" || place1 == "Ni" || place1 == "Nc") && val >=85 && max <= 38){
-            var prob = max * 1.75 + 32.5
+            var prob = max * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -579,7 +579,7 @@
             }
             else if(place1 == "N" && max <= 38){
             
-            var prob = max * 1.75 + 32.5
+            var prob = max * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -587,7 +587,7 @@
             }
             else if((place1 == "NU" || place1 == "NI" || place1 == "NC") && val >=75 && max <= 38){
             
-            var prob = max * 1.75 + 32.5
+            var prob = max * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno").innerText = "ймовірність резекції: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -723,7 +723,7 @@
           document.getElementById("result").innerText =place1 +"   "+ Math.round(val1) +"%  ";
           if (place1 == "Nu" || place1 == "Ni" || place1 == "Nc" || place1 == "N" || place1 == "NU" || place1 == "NI" || place1 == "NC"){
             if((place1 == "Nu" || place1 == "Ni" || place1 == "Nc") && val1 >=85 && max1 <= 38){
-            var prob = max1 * 1.75 + 32.5
+            var prob = max1 * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -731,7 +731,7 @@
             }
             else if(place1 == "N" && max1 <= 38){
             
-            var prob = max1 * 1.75 + 32.5
+            var prob = max1 * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -739,7 +739,7 @@
             }
             else if((place1 == "NU" || place1 == "NI" || place1 == "NC") && val1 >=75 && max1 <= 38){
             
-            var prob = max1 * 1.75 + 32.5
+            var prob = max1 * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno").innerText = "ймовірність резекції першої пухлини: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -805,7 +805,7 @@
           document.getElementById("result2").innerText =place2 +"   "+ Math.round(val2) +"%  ";
           if (place2 == "Nu" || place2 == "Ni" || place2 == "Nc" || place2 == "N" || place2 == "NU" || place2 == "NI" || place2 == "NC"){
             if((place2 == "Nu" || place2 == "Ni" || place2 == "Nc") && val2 >=85 && max2 <= 38){
-            var prob = max2 * 1.75 + 32.5
+            var prob = max2 * (-1.5714) + 109.7142
             alert(8)
             if(lang == "ua")
             {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
@@ -814,7 +814,7 @@
             }
             else if(place2 == "N" && max2 <= 38){
             alert(7)
-            var prob = max2 * 1.75 + 32.5
+            var prob = max2 * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -822,7 +822,7 @@
             }
             else if((place2 == "NU" || place2 == "NI" || place2 == "NC") && val2 >=75 && max2 <= 38){
             alert(6)
-            var prob = max2 * 1.75 + 32.5
+            var prob = max2 * (-1.5714) + 109.7142
             if(lang == "ua")
             {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
             else if(lang == "en"){
@@ -846,7 +846,7 @@
               document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
           }
           else if(place2 == "C" && val2 >= 67){
-            alert(4)
+      (-1.5714) + 109.7142
             var prob = val2* 1.53125 -52.59375
             if(lang == "ua")
             {document.getElementById("diagno2").innerText = "ймовірність резекції другої пухлини: "+ Math.round(prob) +"%  ";}
