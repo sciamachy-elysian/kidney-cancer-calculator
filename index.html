@@ -594,10 +594,10 @@
               document.getElementById("diagno").innerText = "probability of resection: "+ Math.round(prob) +"%  ";}
             }
             else{
-            
+            var prob = max * (-1.5714) + 109.7142
             if(lang == "ua")
-            document.getElementById("diagno").innerText = "нефректомія";
-            else  document.getElementById("diagno").innerText = "nephrectomy";
+            document.getElementById("diagno").innerText = "нефректомія, ймовірність резекції: "+ Math.round(prob) +"%  ";
+            else  document.getElementById("diagno").innerText = "nephrectomy, probability of resection: "+ Math.round(prob) +"%  ";
           }
             
           }
@@ -746,10 +746,10 @@
               document.getElementById("diagno").innerText = "probability of first tumor resection: "+ Math.round(prob) +"%  ";}
             }
             else{
-            
+              var prob = max * (-1.5714) + 109.7142
             if(lang == "ua")
-            document.getElementById("diagno").innerText = "нефректомія";
-            else  document.getElementById("diagno").innerText = "nephrectomy";
+            document.getElementById("diagno").innerText = "нефректомія, ймовірність резекції: "+ Math.round(prob) +"%  ";
+            else  document.getElementById("diagno").innerText = "nephrectomy, probability of resection: "+ Math.round(prob) +"%  ";
           }
             
           }
@@ -829,10 +829,10 @@
               document.getElementById("diagno2").innerText = "probability of second tumor resection: "+ Math.round(prob) +"%  ";}
             }
             else{
-            
+            var prob = max * (-1.5714) + 109.7142
             if(lang == "ua")
-            document.getElementById("diagno2").innerText = "нефректомія";
-            else  document.getElementById("diagno2").innerText = "nephrectomy";
+            document.getElementById("diagno").innerText = "нефректомія, ймовірність резекції: "+ Math.round(prob) +"%  ";
+            else  document.getElementById("diagno").innerText = "nephrectomy, probability of resection: "+ Math.round(prob) +"%  ";
           }
             
           }
